@@ -1,0 +1,91 @@
+.add-post {
+    margin-bottom: 3rem;
+    padding: 1.5rem 2rem;
+
+    background-color: $secondary;
+    box-shadow: 0 15px 25px rgba($color: $black, $alpha: .45);
+
+    @include breakpoint($mobile-bp) {
+        padding: 1.5rem;
+    }
+}
+
+.add-post__form {
+    display: flex;
+    align-items: flex-end;
+}
+
+.add-post__textarea {
+    display: block;
+    flex-grow: 1;
+    width: 80%;
+    height: 34px;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: $white;
+    border: none;
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+    &::placeholder {
+        color: #D2D2D2;
+    }
+}
+
+.add-post__file,
+.add-post__send {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: none;
+    border-radius: 50%;
+
+    transition: background-color .2s linear;
+
+    @include breakpoint($mobile-bp) {
+        width: 3.4rem;
+        height: 3.4rem;
+    }
+}
+
+.add-post__file {
+    background: #EBEBEB url("../images/addphoto.svg") center no-repeat;
+    cursor: pointer;
+    input {
+        display: none;
+    }
+
+    &:hover {
+        background-color: darken(#EBEBEB,10%);
+    }
+
+    @include breakpoint($mobile-bp)  {
+        background-size: 18px;
+    }
+}
+
+.add-post__send {
+    margin-left: 1.5rem;
+    background: $blue url("../images/sendarrow.svg") center no-repeat;
+    font-size: 0;
+    color: transparent;
+    &:hover {
+        background: darken($blue,5%);
+    }
+
+    @include breakpoint($mobile-bp)  {
+        background-size: 15px;
+    }
+
+}
+
+.add-post__form-actions {
+    width: 12rem;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+
+    @include breakpoint($mobile-bp) {
+        width: 9rem;
+    }
+}
